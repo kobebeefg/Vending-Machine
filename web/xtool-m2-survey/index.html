@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xTool M2 業配影片企劃問卷</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --text:#17191d; --muted:#6f7680;
+  --line:#e3e6ea; --accent:#111; --soft:#eef1f4;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:920px;margin:auto;padding:24px}
+.hero{padding:28px 0 14px}
+h1{font-size:32px;line-height:1.2;margin:0 0 10px}
+.hero p{color:var(--muted);margin:0;max-width:760px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+h2{font-size:21px;margin:0 0 14px}
+h3{font-size:16px;margin:18px 0 8px}
+label{display:block;font-weight:650;margin:14px 0 6px}
+small,.hint{display:block;color:var(--muted);font-weight:400;margin-top:2px}
+input[type=text],input[type=number],textarea,select{
+  width:100%;border:1px solid #cfd4da;border-radius:12px;padding:11px 12px;
+  font:inherit;background:#fff;color:#111
+}
+textarea{min-height:96px;resize:vertical}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.choice{display:flex;flex-wrap:wrap;gap:9px;margin:7px 0}
+.choice label{margin:0;font-weight:500;background:var(--soft);border-radius:999px;padding:8px 11px;cursor:pointer}
+.choice input{margin-right:6px}
+.actions{position:sticky;bottom:0;background:rgba(246,247,249,.94);backdrop-filter:blur(10px);padding:12px 0 18px;display:flex;gap:10px;flex-wrap:wrap}
+button{border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}
+.primary{background:#111;color:#fff}.secondary{background:#e9edf1;color:#111}
+.note{background:#fff8dc;border:1px solid #f0df99;border-radius:12px;padding:12px 14px;color:#554a1d}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+pre{white-space:pre-wrap;background:#0f1115;color:#f3f3f3;border-radius:14px;padding:16px;max-height:420px;overflow:auto}
+@media(max-width:700px){.wrap{padding:16px}.grid{grid-template-columns:1fr}h1{font-size:27px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>xTool M2 業配影片企劃問卷</h1>
+    <p>目標：整理成約 10 分鐘、符合「黃信惠的瘋狂教室」口吻的 YouTube 講稿。請用你平常說話的方式填寫，不用修飾；空白也沒關係。</p>
+  </div>
+
+  <form id="form">
+    <section class="card">
+      <h2>01｜影片定位</h2>
+      <label>這支影片你最想讓觀眾記住的一句話是什麼？</label>
+      <textarea name="核心一句話" placeholder="例：它不是功率最大的雷射機，但可能是我目前覺得最適合教學生使用的一台。"></textarea>
+
+      <label>主要觀眾</label>
+      <div class="choice">
+        <label><input type="checkbox" name="主要觀眾" value="老師／教育工作者">老師／教育工作者</label>
+        <label><input type="checkbox" name="主要觀眾" value="Maker">Maker</label>
+        <label><input type="checkbox" name="主要觀眾" value="家長／親子">家長／親子</label>
+        <label><input type="checkbox" name="主要觀眾" value="雷射切割新手">雷射切割新手</label>
+        <label><input type="checkbox" name="主要觀眾" value="工作室／商用">工作室／商用</label>
+      </div>
+
+      <label>整體立場</label>
+      <select name="整體立場">
+        <option>實際使用心得為主，優缺點都講</option>
+        <option>教學應用為主</option>
+        <option>產品評測為主</option>
+        <option>創作應用為主</option>
+      </select>
+
+      <label>你希望「業配感」控制在什麼程度？</label>
+      <select name="業配感">
+        <option>很低，像平常心得影片</option>
+        <option>中等，清楚說優點但保留缺點</option>
+        <option>明顯導購型</option>
+      </select>
+    </section>
+
+    <section class="card">
+      <h2>02｜你的真實使用情境</h2>
+      <label>你實際用了多久？大概做了哪些東西？</label>
+      <textarea name="使用時間與內容" placeholder="例：暑期課程連續使用幾天、學生做教具、模型、貼紙、木板作品……"></textarea>
+
+      <label>學生大概幾歲？他們能自己做到哪一步？</label>
+      <textarea name="學生操作能力" placeholder="例：國小高年級可以自己放材料、定位、印刷、切割……老師只需協助安全確認。"></textarea>
+
+      <label>有沒有一個最適合當影片主案例的學生作品？</label>
+      <textarea name="主案例作品" placeholder="請描述作品、材料、從設計到完成的流程。"></textarea>
+
+      <label>有哪些畫面你已經拍到？</label>
+      <div class="choice">
+        <label><input type="checkbox" name="已有畫面" value="學生操作">學生操作</label>
+        <label><input type="checkbox" name="已有畫面" value="印刷過程">印刷過程</label>
+        <label><input type="checkbox" name="已有畫面" value="雷射切割">雷射切割</label>
+        <label><input type="checkbox" name="已有畫面" value="雕刻">雕刻</label>
+        <label><input type="checkbox" name="已有畫面" value="完成作品">完成作品</label>
+        <label><input type="checkbox" name="已有畫面" value="焦黑邊緣">焦黑邊緣</label>
+        <label><input type="checkbox" name="已有畫面" value="底板燒痕">底板燒痕</label>
+        <label><input type="checkbox" name="已有畫面" value="清潔機器">清潔機器</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>03｜20W 雷射實測</h2>
+      <div class="grid">
+        <div>
+          <label>主要測試材料</label>
+          <input name="雷射材料" type="text" placeholder="例：3mm MDF／密底板">
+        </div>
+        <div>
+          <label>你常用的切割速度／功率</label>
+          <input name="切割參數" type="text" placeholder="如果記得就填">
+        </div>
+      </div>
+
+      <label>你覺得它快到什麼程度？</label>
+      <textarea name="切割體感" placeholder="可直接用你的口語描述，例如：體感甚至超過我以前用的某些 30～40W CO₂。"></textarea>
+
+      <label>要不要在影片中明講「可能跟光斑更小有關」？</label>
+      <div class="choice">
+        <label><input type="radio" name="光斑說法" value="要，當作個人推測">要，當作個人推測</label>
+        <label><input type="radio" name="光斑說法" value="只講觀察，不推論原因">只講觀察，不推論原因</label>
+        <label><input type="radio" name="光斑說法" value="不講">不講</label>
+      </div>
+
+      <label>雕刻效果你最滿意的是什麼？</label>
+      <textarea name="雕刻心得" placeholder="速度、深淺、細節、小字、照片、線條等。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>04｜噴墨模組：你真正想講什麼</h2>
+      <div class="note">廠商回覆：M2 墨水匣與 M1 Ultra 類似；上一代已有補墨教學。補墨方式是熱熔開孔、針筒補墨，再用矽膠塞封回。國外原廠墨水匣售價約 US$59；台灣售價可能另含認證與稅務成本。</div>
+
+      <label>你實測過哪些表面？效果分別如何？</label>
+      <textarea name="噴墨材料測試" placeholder="木板、噴墨專用紙、防水紙、貼紙、壓克力？請寫你實際試過的。"></textarea>
+
+      <label>木板直接印的問題</label>
+      <textarea name="木板印刷問題" placeholder="例：墨量太大會糊、滲色；50% 左右墨量比較自然。"></textarea>
+
+      <label>你要不要示範「50% 墨量 vs 100% 墨量」？</label>
+      <div class="choice">
+        <label><input type="radio" name="墨量對照" value="要">要</label>
+        <label><input type="radio" name="墨量對照" value="不要">不要</label>
+        <label><input type="radio" name="墨量對照" value="看素材時間">看素材時間</label>
+      </div>
+
+      <label>你要怎麼定義這個噴墨功能？</label>
+      <textarea name="噴墨定位" placeholder="例：不要把它當 UV 印刷，而是把它當成可以跟雷射切割整合的一般彩色噴墨。"></textarea>
+
+      <label>補墨這件事要講多深？</label>
+      <select name="補墨深度">
+        <option>簡短帶過：原廠可換匣，也有自行補墨可能</option>
+        <option>講方法，但不實際操作</option>
+        <option>影片中實際補墨示範</option>
+        <option>先不講，等官方資訊更完整</option>
+      </select>
+
+      <label>US$59 墨水匣價格要不要放進影片？</label>
+      <div class="choice">
+        <label><input type="radio" name="墨匣價格" value="要">要</label>
+        <label><input type="radio" name="墨匣價格" value="不要">不要</label>
+        <label><input type="radio" name="墨匣價格" value="等台灣售價確認後再講">等台灣售價確認後再講</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>05｜刀切模組、貼紙與紙材</h2>
+      <div class="note">廠商回覆：M2 這一代取消 M1／M1 Ultra 的刀切模組，產品線可能刻意分流；xTool 另有類似 Cricut 的刀切機。M2 切貼紙仍以雷射為主。</div>
+
+      <label>你最不滿意雷射切紙／貼紙的是什麼？</label>
+      <textarea name="紙材缺點" placeholder="例：淺色貼紙周圍的黑色焦邊很明顯，精緻度不如刀切。"></textarea>
+
+      <label>你會希望 M2 未來加入刀切模組嗎？為什麼？</label>
+      <textarea name="刀切期待"></textarea>
+
+      <label>貼紙塑膠材質的氣味／安全問題，你有沒有實際遇到？</label>
+      <textarea name="貼紙氣味安全" placeholder="請只寫你實際觀察；若材料成分不確定，可註明影片中會提醒確認材質。"></textarea>
+
+      <label>廠商提到 M2 吹氣與抽風比前代強很多，要不要放進去？</label>
+      <div class="choice">
+        <label><input type="radio" name="抽風強化" value="要，且我有感">要，而且我有感</label>
+        <label><input type="radio" name="抽風強化" value="要，但只當官方資訊">要，但只當官方資訊</label>
+        <label><input type="radio" name="抽風強化" value="不特別講">不特別講</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>06｜底板、CleanCut Panel 與清潔</h2>
+      <div class="note">廠商回覆：原廠已有推出 M2 CleanCut Panel 與墊高底座等配件，但台灣目前尚未上市，後續會陸續增加。</div>
+
+      <label>你實際覺得底板設計哪裡不好？</label>
+      <textarea name="底板缺點" placeholder="例：切穿後燒痕直接留在底板；焦油與膠痕累積。"></textarea>
+
+      <label>底板髒污如何影響噴墨？</label>
+      <textarea name="底板與噴墨衝突" placeholder="例：雷射需要承受煙塵、焦油，但噴墨又希望工作區乾淨，兩個功能放一起有點互相衝突。"></textarea>
+
+      <label>你要不要在片中介紹 CleanCut Panel？</label>
+      <div class="choice">
+        <label><input type="radio" name="CleanCut Panel" value="要，當作解法">要，當作解法</label>
+        <label><input type="radio" name="CleanCut Panel" value="要，但會說台灣尚未上市">要，但會說台灣尚未上市</label>
+        <label><input type="radio" name="CleanCut Panel" value="不講">不講</label>
+      </div>
+
+      <label>你會推薦什麼暫時性的墊高／保護方式？</label>
+      <textarea name="暫時墊高方式" placeholder="例：原廠夾座、蜂巢板、可替換墊材；若沒有把握先留白。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>07｜你認為它最適合誰、不適合誰</h2>
+      <label>最適合的三種人</label>
+      <textarea name="適合族群" placeholder="例：老師／Maker 教室／想讓孩子自己完成作品的家庭。"></textarea>
+
+      <label>不適合的三種需求</label>
+      <textarea name="不適合族群" placeholder="例：只追求大功率厚板切割、專業貼紙刀切、需要真正 UV 直噴耐水的商業用途。"></textarea>
+
+      <label>如果跟你以前用過的機器相比，你會拿哪些來比較？</label>
+      <textarea name="比較對象" placeholder="M1 Ultra、舊 20W 二極體、30～40W CO₂、其他品牌等。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>08｜你一定想講的缺點</h2>
+      <label>請依嚴重程度列 1～5 點</label>
+      <textarea name="主要缺點" placeholder="1. 紙張焦邊&#10;2. 底板污染&#10;3. 噴墨不是真正防水／UV 印刷&#10;4. ……"></textarea>
+
+      <label>有沒有哪個缺點你希望「明講，不幫廠商修飾」？</label>
+      <textarea name="必須直說的缺點"></textarea>
+
+      <label>目前有沒有還沒確認、不想講太死的資訊？</label>
+      <textarea name="待確認資訊" placeholder="例：台灣墨匣售價、補墨是否影響保固、CleanCut Panel 台灣上市時間。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>09｜影片節奏與畫面安排</h2>
+      <label>開場你比較想用哪種方式？</label>
+      <select name="開場方式">
+        <option>直接秀學生操作：小朋友居然可以自己用</option>
+        <option>先秀成品，再回頭講機器</option>
+        <option>先講 20W 卻切很快的反差</option>
+        <option>先講印刷＋雷射一體化</option>
+      </select>
+
+      <label>你希望 10 分鐘大概怎麼分配？</label>
+      <textarea name="時間分配" placeholder="例：開場 45 秒／學生使用 2 分鐘／雷射 2 分鐘／噴墨 2 分鐘／缺點 2 分鐘／結論 1 分鐘。"></textarea>
+
+      <label>需要加入哪些 B-roll 或實測？</label>
+      <textarea name="待補拍畫面" placeholder="例：3mm MDF 計時、100% vs 50% 墨量、防水紙沖水、淺色貼紙焦邊特寫、清潔底板。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>10｜業配資訊與結尾</h2>
+      <label>品牌要求一定要講的內容</label>
+      <textarea name="品牌必講" placeholder="若目前沒有就寫沒有。"></textarea>
+
+      <label>有沒有折扣碼、購買連結或活動？</label>
+      <textarea name="導購資訊"></textarea>
+
+      <label>你希望最後怎麼收？</label>
+      <textarea name="結尾方向" placeholder="例：如果只是追求大功率，它不一定是首選；但如果是教學與創作，我真的很喜歡這種一體化流程。"></textarea>
+
+      <label>這支片要不要保留你常用的開場「哈囉大家好，我是黃信惠」？</label>
+      <div class="choice">
+        <label><input type="radio" name="固定開場" value="要" checked>要</label>
+        <label><input type="radio" name="固定開場" value="不要">不要</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>11｜補充：任何你突然想到的東西</h2>
+      <textarea name="自由補充" style="min-height:170px" placeholder="不用整理，想到什麼就寫什麼。我之後會幫你重組。"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>完成後會產生什麼？</h2>
+      <p class="hint">按「產生講稿需求摘要」後，會把你的答案整理成一段文字。把那段文字貼回 ChatGPT，我就可以直接依此產生約 10 分鐘、符合你頻道風格的完整逐字稿，並可再拆成拍攝清單、B-roll、字幕重點與 Shorts 版本。</p>
+      <pre id="output">尚未產生。</pre>
+    </section>
+
+    <div class="actions">
+      <button type="button" class="primary" onclick="generate()">產生講稿需求摘要</button>
+      <button type="button" class="secondary" onclick="copyOut()">複製摘要</button>
+      <button type="button" class="secondary" onclick="downloadTxt()">下載 TXT</button>
+      <button type="button" class="secondary" onclick="clearAll()">清除表單</button>
+    </div>
+  </form>
+</div>
+
+<script>
+const form = document.getElementById('form');
+const out = document.getElementById('output');
+
+function getData(){
+  const data = {};
+  const fd = new FormData(form);
+  for (const [k,v] of fd.entries()){
+    if(data[k]) data[k] += '、' + v;
+    else data[k] = v;
+  }
+  return data;
+}
+function generate(){
+  const data = getData();
+  let text = `請依照以下資料，幫我寫一支約 10 分鐘的 xTool M2 YouTube 業配影片逐字稿。\n`;
+  text += `請維持「黃信惠的瘋狂教室」既有風格：繁體中文、口語但精準、短句、實測導向，不要像產品型錄；優點與缺點都要明講。敘事盡量採「實際情境／痛點 → 為什麼 → 原理或觀察 → 實作／測試 → 踩雷與限制 → 適合誰 → 結論」。\n`;
+  text += `如果資料裡有尚未確認的規格、價格、保固或官方說法，請標示「待確認」，不要擅自補成確定事實。\n\n`;
+  Object.entries(data).forEach(([k,v])=>{
+    if(v && v.trim()) text += `【${k}】\n${v.trim()}\n\n`;
+  });
+  text += `另外請在逐字稿旁邊以簡短括號標示建議畫面，例如（學生操作畫面）、（MDF 切割特寫）、（50%/100% 墨量對照）。`;
+  out.textContent = text;
+  localStorage.setItem('xtoolM2Form', JSON.stringify(data));
+  localStorage.setItem('xtoolM2Output', text);
+  out.scrollIntoView({behavior:'smooth', block:'center'});
+}
+async function copyOut(){
+  if(out.textContent==='尚未產生。') generate();
+  await navigator.clipboard.writeText(out.textContent);
+  alert('已複製，可以直接貼回 ChatGPT。');
+}
+function downloadTxt(){
+  if(out.textContent==='尚未產生。') generate();
+  const blob = new Blob([out.textContent], {type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='xTool_M2_影片企劃問卷摘要.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function clearAll(){
+  if(confirm('確定要清除所有已填內容嗎？')){
+    form.reset(); out.textContent='尚未產生。';
+    localStorage.removeItem('xtoolM2Form');
+    localStorage.removeItem('xtoolM2Output');
+  }
+}
+function restore(){
+  const saved = JSON.parse(localStorage.getItem('xtoolM2Form') || '{}');
+  for(const [name,value] of Object.entries(saved)){
+    const nodes = form.querySelectorAll(`[name="${CSS.escape(name)}"]`);
+    if(!nodes.length) continue;
+    const vals = value.split('、');
+    nodes.forEach(n=>{
+      if(n.type==='checkbox' || n.type==='radio') n.checked = vals.includes(n.value);
+      else n.value = value;
+    });
+  }
+  const savedOut = localStorage.getItem('xtoolM2Output');
+  if(savedOut) out.textContent=savedOut;
+}
+form.addEventListener('input', ()=>{
+  localStorage.setItem('xtoolM2Form', JSON.stringify(getData()));
+});
+restore();
+</script>
+</body>
+</html>
